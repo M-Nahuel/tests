@@ -1,2 +1,2 @@
-What's up, freeCodeCamp!
+What's up, JavaScript!
 I'm learning Git!
