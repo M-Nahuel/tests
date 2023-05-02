@@ -22,8 +22,10 @@ def error(data):
         if i < 2:
             if data[i].isdigit():
                 state = True
+                break
             if not data[i].isalpha():
                 state = True
+                break
         #Check if is not a number
         state = number(data[i])
     return state
@@ -64,7 +66,9 @@ try:
     
     for key in sorted(dic):
         print(key + ' \t ' + str(dic[key]))
-                
+        
+except FileNotFoundError:
+    print('El archivo proporcionado no existe!')
 except ArchivoVacio as a:
     print(a.msg)
 except LineaErronea as a:
