@@ -10,18 +10,23 @@ class ArchivoVacio(ExcepcionDatosAlumnos):
 	    self.msg = msg
 
 def error(data):
-    for i in range(0, len(data)):
-        if i < 2:
-            if data[i].isdigit():
-                return True
-            if not data[i].isalpha():
-                return True
-            else:
-                return False
-        if not data[i].replace('.','').isdigit():
+    def number(n):
+        try:
+            n = float(n)
+        except ValueError:
             return True
         return False
 
+    for i in range(len(data)):
+        state = False
+        if i < 2:
+            if data[i].isdigit():
+                state = True
+            if not data[i].isalpha():
+                state = True
+        #Check if is not a number
+        state = number(data[i])
+    return state
 	
 inp = input('Ingrese el nombre del archivo que desea inspeccionar: ')
 
