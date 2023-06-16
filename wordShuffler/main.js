@@ -38,6 +38,9 @@ function textShuffler(text) {
 document.getElementById('convert').addEventListener('click', function() {
     let input = document.getElementById('input').value;
     let mixed = textShuffler(input);
+
+    document.getElementById('card').style.display = 'none';
+    document.getElementById('outP').textContent = mixed;
     console.log(mixed);
 });
 
