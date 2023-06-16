@@ -1,0 +1,6 @@
+var = ['', 'abc', '']
+
+for i in range(len(var)):
+	print(var[i].find(''))
+
+
