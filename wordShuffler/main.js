@@ -38,13 +38,20 @@ function textShuffler(text) {
 document.getElementById('convert').addEventListener('click', function() {
     let input = document.getElementById('input').value;
     let mixed = textShuffler(input);
+    let done = document.getElementById('done');
 
-    document.getElementById('card').style.display = 'none';
-    document.getElementById('outP').textContent = mixed;
+    document.getElementById('input').style.display = 'none';
+    document.getElementById('convert').style.display = 'none';
+
+    document.getElementById('description').textContent = "Words shuffled!";
+    let outp = document.getElementById('output');
+    outp.textContent = mixed;
+    outp.style.display = 'block';
+    done.style.display = 'block';
     console.log(mixed);
 });
 
-// let input = "This is a sample text.";
-// let shfld = textShuffler(input);
-// console.log(shfld);
+document.getElementById('done').addEventListener('click', function(){
+    window.location.reload();
+})
   
